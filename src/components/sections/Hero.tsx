@@ -8,9 +8,16 @@ export const Hero: React.FC = () => {
             id="home"
             className="pt-28 pb-16 md:pt-36 md:pb-24 flex flex-col items-start gap-6 relative"
         >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-dark rounded-full shadow-neo text-sm font-bold animate-fade-in-up">
+            <div className="group inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-dark rounded-full shadow-neo text-sm font-bold animate-fade-in-up transition-all duration-300 hover:scale-105 cursor-default">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 Available for interesting projects
+                <button
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="max-w-0 overflow-hidden group-hover:max-w-[100px] transition-all duration-500 ease-in-out text-primary hover:text-primary/80 whitespace-nowrap flex items-center"
+                >
+                    <span className="mx-2 text-dark/30">|</span>
+                    Contact Me
+                </button>
             </div>
 
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">

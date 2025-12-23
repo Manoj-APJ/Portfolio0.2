@@ -30,9 +30,15 @@ export const Navbar: React.FC = () => {
                             {link.name}
                         </a>
                     ))}
-                    <Button variant="accent" size="sm">
-                        <Download className="w-4 h-4" /> Resume
+                    <Button
+                        variant="accent"
+                        size="sm"
+                        onClick={() => window.open('/resume.pdf', '_blank')}
+                    >
+                        <Download className="w-4 h-4" />
+                        Resume
                     </Button>
+
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -57,9 +63,18 @@ export const Navbar: React.FC = () => {
                             {link.name}
                         </a>
                     ))}
-                    <Button variant="accent" className="w-full justify-center">
-                        <Download className="w-4 h-4" /> Download Resume
+                    <Button
+                        variant="accent"
+                        className="w-full justify-center"
+                        onClick={() => {
+                            window.open('/resume.pdf', '_blank');
+                            setIsOpen(false);
+                        }}
+                    >
+                        <Download className="w-4 h-4" />
+                        View Resume
                     </Button>
+
                 </div>
             )}
         </nav>
