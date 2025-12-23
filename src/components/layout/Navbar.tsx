@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Code2, Download } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Logo } from '../layout/logo';
 

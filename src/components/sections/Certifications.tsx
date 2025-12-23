@@ -43,7 +43,7 @@ export const Certifications: React.FC = () => {
                                 </div>
                                 <p className="font-bold opacity-80 mb-2">{cert.org}</p>
                                 <div className="flex items-center gap-2 text-sm opacity-60">
-                                    <CheckCircle2 className="w-4 h-4 text-green-600" /> {cert.id}
+                                    <CheckCircle2 className="w-4 h-4 text-green-600" /> {cert.title}
                                 </div>
                             </Card>
                         </div>
