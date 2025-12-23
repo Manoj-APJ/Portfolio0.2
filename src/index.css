@@ -8,7 +8,13 @@
   body {
     @apply bg-bg text-dark font-body antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading font-bold;
   }
 }
@@ -17,9 +23,11 @@
   .neo-card {
     @apply bg-surface border-3 border-dark rounded-neo shadow-neo transition-all duration-200;
   }
+
   .neo-button {
     @apply px-6 py-2 bg-primary border-3 border-dark rounded-full font-bold shadow-neo active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all hover:-translate-y-1 hover:shadow-neo-lg;
   }
+
   .neo-input {
     @apply w-full px-4 py-3 bg-white border-3 border-dark rounded-neo focus:outline-none focus:ring-0 focus:shadow-neo transition-all placeholder:text-gray-400;
   }
