@@ -23,7 +23,7 @@ function App() {
         <Projects />
       </main>
 
-      <Blogs />
+      {/* <Blogs /> */}
 
       <main className="container mx-auto px-4">
         <Certifications />
