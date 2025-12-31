@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
 
                     {/* Center: GitHub Contribution CTA */}
                     <a
-                        href="https://github.com/Manoj-APJ/portfolio0"
+                        href="https://github.com/Manoj-APJ/portfolio0.2"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group text-center justify-self-center"
