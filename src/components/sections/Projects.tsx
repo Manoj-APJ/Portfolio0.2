@@ -4,6 +4,7 @@ import { Badge } from '../ui/Badge';
 import { Github, ExternalLink } from 'lucide-react';
 import orgExpenseImg from "../../assets/org-expense.png";
 import rsvpImg from "../../assets/rsvp.png";
+import pdfMarketplaceImg from "../../assets/pdfMarketplaceImg.png";
 
 
 const projects = [
@@ -26,13 +27,22 @@ const projects = [
         image: rsvpImg
     },
     {
-        title: "AI Files Organizer",
-        description: "Intelligent file management tool using LangChain and LLMs. Features smart search, auto-tagging, and content-aware queries. Preferred by 80% of surveyed users.",
-        tech: ["JavaScript", "LangChain", "Transformers", "Supabase"],
-        github: "https://github.com/Manoj-APJ/AI_files_org",
-        live: "https://github.com/Manoj-APJ/AI_files_org",
-        featured: false
+        title: "Full-Stack PDF Marketplace",
+        description: "A secure marketplace for buying and selling PDFs. Features include PDF browsing, search, cart capability, orders, and a secure purchase verification flow using Razorpay.",
+        tech: ["JavaScript", "Supabase", "Razorpay", "Netlify"],
+        github: "#",
+        live: "#",
+        featured: false,
+        image: pdfMarketplaceImg
     }
+    // {
+    //     title: "AI Files Organizer",
+    //     description: "Intelligent file management tool using LangChain and LLMs. Features smart search, auto-tagging, and content-aware queries. Preferred by 80% of surveyed users.",
+    //     tech: ["JavaScript", "LangChain", "Transformers", "Supabase"],
+    //     github: "https://github.com/Manoj-APJ/AI_files_org",
+    //     live: "https://github.com/Manoj-APJ/AI_files_org",
+    //     featured: false
+    // }
 ];
 
 export const Projects: React.FC = () => {
