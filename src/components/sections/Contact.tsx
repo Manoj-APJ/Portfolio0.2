@@ -16,38 +16,36 @@ export const Contact: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="py-16 bg-surface border-t-3 border-dark">
-            <div className="container mx-auto px-4 max-w-3xl">
-                <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3 text-center">
-                    Get In Touch
-                </h2>
-                <p className="text-lg opacity-70 text-center mb-8">
-                    Have a project in mind or just want to say hi?
-                </p>
+        <section id="contact" className="py-8">
+            <div className="container mx-auto px-6 max-w-3xl">
+                <div className="mb-12 text-left">
+                    <h2 className="text-3xl md:text-4xl font-heading font-extrabold mb-3">Get In Touch</h2>
+                    <p className="text-base text-dark/70">Have a project in mind or just want to say hi?</p>
+                </div>
 
-                <Card className="bg-white p-6 md:p-8">
+                <Card className="p-6 md:p-8">
                     {/* Copy Email */}
                     <div className="flex items-center justify-center gap-3 mb-6 text-sm">
-                        <span className="font-bold">{email}</span>
+                        <span className="font-bold text-dark/80">{email}</span>
                         <button
                             onClick={copyEmail}
                             type="button"
-                            className="flex items-center gap-1 px-3 py-1 border-2 border-dark rounded-full hover:bg-surface transition"
+                            className="flex items-center gap-1.5 px-3 py-1 border border-zinc-200 rounded-full hover:bg-zinc-50 transition text-xs font-semibold text-dark/70"
                         >
-                            <Copy className="w-4 h-4" />
+                            <Copy className="w-3.5 h-3.5" />
                             {copied ? 'Copied!' : 'Copy'}
                         </button>
                     </div>
 
                     {submitted ? (
                         <div className="min-h-[220px] flex flex-col items-center justify-center text-center animate-fade-in-up">
-                            <div className="w-16 h-16 bg-green-400 rounded-full border-3 border-dark flex items-center justify-center mb-4 shadow-neo">
-                                <CheckCircle className="w-8 h-8" />
+                            <div className="w-12 h-12 bg-emerald-500/10 text-emerald-600 rounded-full flex items-center justify-center mb-4 border border-emerald-500/10">
+                                <CheckCircle className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold mb-2">
                                 Message Sent!
                             </h3>
-                            <p className="opacity-70 mb-4">
+                            <p className="text-sm text-dark/60 mb-4">
                                 Thanks for reaching out. You can send another message.
                             </p>
                             <Button type="button" onClick={() => setSubmitted(false)}>
@@ -89,11 +87,11 @@ export const Contact: React.FC = () => {
                                     console.error("Form submission error", error);
                                 }
                             }}
-                            className="space-y-5"
+                            className="space-y-5 text-left"
                         >
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div className="space-y-1">
-                                    <label htmlFor="name" className="font-bold text-sm">
+                                    <label htmlFor="name" className="font-semibold text-xs text-dark/70 uppercase tracking-wider">
                                         Name (optional)
                                     </label>
                                     <input
@@ -101,12 +99,12 @@ export const Contact: React.FC = () => {
                                         name="name"
                                         type="text"
                                         placeholder="John Doe"
-                                        className="neo-input w-full py-2"
+                                        className="neo-input w-full py-2.5 text-sm"
                                     />
                                 </div>
 
                                 <div className="space-y-1">
-                                    <label htmlFor="email" className="font-bold text-sm">
+                                    <label htmlFor="email" className="font-semibold text-xs text-dark/70 uppercase tracking-wider">
                                         Email *
                                     </label>
                                     <input
@@ -115,13 +113,13 @@ export const Contact: React.FC = () => {
                                         type="email"
                                         placeholder="john@example.com"
                                         required
-                                        className="neo-input w-full py-2"
+                                        className="neo-input w-full py-2.5 text-sm"
                                     />
                                 </div>
                             </div>
 
                             <div className="space-y-1">
-                                <label htmlFor="message" className="font-bold text-sm">
+                                <label htmlFor="message" className="font-semibold text-xs text-dark/70 uppercase tracking-wider">
                                     Message (optional)
                                 </label>
                                 <textarea
@@ -129,12 +127,12 @@ export const Contact: React.FC = () => {
                                     name="message"
                                     placeholder="Tell me about your project..."
                                     rows={4}
-                                    className="neo-input w-full resize-none"
+                                    className="neo-input w-full resize-none text-sm"
                                 />
                             </div>
 
                             <div className="flex justify-end pt-2">
-                                <Button type="submit" size="md" className="w-full md:w-auto">
+                                <Button type="submit" size="md" className="w-full md:w-auto px-6 py-2.5 text-sm">
                                     Send Message <Send className="w-4 h-4 ml-1" />
                                 </Button>
                             </div>

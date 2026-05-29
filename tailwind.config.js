@@ -7,23 +7,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#E0F2F1', // Mint/Teal pastel
-        surface: '#FFF8E1', // Cream
-        dark: '#18181B', // Zinc-900 for text/borders
-        primary: '#FF8A80', // Pastel Red/Pink
-        secondary: '#A7FFEB', // Pastel Green
-        accent: '#FFD180', // Pastel Orange
+        bg: '#FCFBF7', // SaaS warm off-white background
+        bgGradientEnd: '#F5F3E9', // SaaS gradient end
+        surface: '#FFFFFF', // Clean white card surfaces
+        dark: '#121214', // Sleek off-black/zinc-900 text
+        primary: '#2B228B', // Deep violet-purple matching Get Started button
+        secondary: '#FFC800', // Bright yellow matching Observability tab
+        accent: '#10B981', // Clean success green matching FREE tooltip
+        borderLight: '#E4E4E7', // Zinc-200 for clean subtle borders
       },
       borderWidth: {
         '3': '3px',
+        '1.5': '1.5px',
       },
       boxShadow: {
-        'neo': '4px 4px 0px 0px rgba(0,0,0,1)',
-        'neo-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
-        'neo-lg': '6px 6px 0px 0px rgba(0,0,0,1)',
+        'neo': '0 4px 20px -2px rgba(43, 34, 139, 0.08), 0 2px 8px -1px rgba(0, 0, 0, 0.04)', // Smooth soft shadow
+        'neo-sm': '0 2px 8px rgba(0, 0, 0, 0.04)',
+        'neo-lg': '0 10px 30px -3px rgba(43, 34, 139, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06)',
       },
       borderRadius: {
-        'neo': '12px',
+        'neo': '16px', // Modern smooth corners
       },
       fontFamily: {
         heading: ['"Space Grotesk"', 'sans-serif'],

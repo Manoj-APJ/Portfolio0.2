@@ -1,7 +1,12 @@
 import React from 'react';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
-import { Database, Code, Cpu, Terminal, Layers } from 'lucide-react';
+import { 
+    Database, Code, Cpu, Terminal, Layers,
+    Binary, Coffee, Code2, Server, Activity, 
+    Leaf, Link, Bot, MessageSquare, GitBranch, 
+    Monitor, Network, Box, HardDrive, Globe 
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const skillCategories = [
@@ -9,56 +14,54 @@ const skillCategories = [
         title: "Languages",
         icon: <Code className="w-6 h-6" />,
         skills: [
-            { name: "C++", color: "blue" },
-            { name: "Python", color: "green" },
-            { name: "Java", color: "orange" },
-            { name: "JavaScript", color: "yellow" },
+            { name: "C++", color: "blue" as const, symbol: <Binary className="w-3.5 h-3.5 text-blue-600/80" /> },
+            { name: "Python", color: "green" as const, symbol: <Terminal className="w-3.5 h-3.5 text-emerald-600/80" /> },
+            { name: "Java", color: "orange" as const, symbol: <Coffee className="w-3.5 h-3.5 text-amber-600/80" /> },
+            { name: "JavaScript", color: "yellow" as const, symbol: <Code2 className="w-3.5 h-3.5 text-yellow-600/80" /> },
         ]
     },
     {
         title: "Backend & Database",
         icon: <Database className="w-6 h-6" />,
         skills: [
-            { name: "Node.js", color: "green" },
-            { name: "Express.js", color: "gray" },
-            { name: "PostgreSQL", color: "blue" },
-            { name: "MongoDB", color: "green" },
-            { name: "RESTful API", color: "pink" },
+            { name: "Node.js", color: "green" as const, symbol: <Server className="w-3.5 h-3.5 text-emerald-600/80" /> },
+            { name: "Express.js", color: "orange" as const, symbol: <Activity className="w-3.5 h-3.5 text-amber-600/80" /> },
+            { name: "PostgreSQL", color: "blue" as const, symbol: <Database className="w-3.5 h-3.5 text-blue-600/80" /> },
+            { name: "MongoDB", color: "green" as const, symbol: <Leaf className="w-3.5 h-3.5 text-emerald-600/80" /> },
+            { name: "RESTful API", color: "pink" as const, symbol: <Link className="w-3.5 h-3.5 text-pink-600/80" /> },
         ]
     },
     {
         title: "AI & NLP Tools",
         icon: <Cpu className="w-6 h-6" />,
         skills: [
-            { name: "LLM Integ.", color: "green" },
-            { name: "LangChain", color: "blue" },
-            { name: "RAG Basics", color: "orange" },
-            { name: "Prompts", color: "yellow" },
+            { name: "LLM Integ.", color: "green" as const, symbol: <Bot className="w-3.5 h-3.5 text-emerald-600/80" /> },
+            { name: "LangChain", color: "blue" as const, symbol: <Layers className="w-3.5 h-3.5 text-blue-600/80" /> },
+            { name: "RAG Basics", color: "orange" as const, symbol: <Cpu className="w-3.5 h-3.5 text-amber-600/80" /> },
+            { name: "Prompts", color: "yellow" as const, symbol: <MessageSquare className="w-3.5 h-3.5 text-yellow-600/80" /> },
         ]
     },
     {
         title: "Developer Tools",
         icon: <Terminal className="w-6 h-6" />,
         skills: [
-            { name: "Git & GitHub", color: "orange" },
-            { name: "Linux", color: "gray" },
-            { name: "VS Code", color: "blue" },
+            { name: "Git & GitHub", color: "orange" as const, symbol: <GitBranch className="w-3.5 h-3.5 text-amber-600/80" /> },
+            { name: "Linux", color: "green" as const, symbol: <Monitor className="w-3.5 h-3.5 text-emerald-600/80" /> },
+            { name: "VS Code", color: "blue" as const, symbol: <Code2 className="w-3.5 h-3.5 text-blue-600/80" /> },
         ]
     },
     {
         title: "CS Foundations",
         icon: <Layers className="w-6 h-6" />,
         skills: [
-            { name: "DSA", color: "pink" },
-            { name: "OOP", color: "blue" },
-            { name: "OS", color: "gray" },
-            { name: "Networks", color: "green" },
+            { name: "DSA", color: "pink" as const, symbol: <Network className="w-3.5 h-3.5 text-pink-600/80" /> },
+            { name: "OOP", color: "blue" as const, symbol: <Box className="w-3.5 h-3.5 text-blue-600/80" /> },
+            { name: "OS", color: "orange" as const, symbol: <HardDrive className="w-3.5 h-3.5 text-amber-600/80" /> },
+            { name: "Networks", color: "green" as const, symbol: <Globe className="w-3.5 h-3.5 text-emerald-600/80" /> },
         ]
     }
 ];
 
-// Combine all skills for the marquee
-const allSkills = skillCategories.flatMap(cat => cat.skills);
 
 export const Skills: React.FC = () => {
     // Animation variants
@@ -81,30 +84,16 @@ export const Skills: React.FC = () => {
         }
     };
 
-    const marqueeVariants = {
-        animate: {
-            x: [0, -1035], // Approximate width, resets seamlessly
-            transition: {
-                x: {
-                    repeat: Infinity,
-                    repeatType: "loop" as const,
-                    duration: 30, // Slow speed
-                    ease: "linear" as const,
-                },
-            },
-        },
-    };
-
     return (
-        <section id="skills" className="py-20 bg-surface border-y-3 border-dark overflow-hidden">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
+        <section id="skills" className="py-8">
+            <div className="container mx-auto px-6 max-w-7xl">
+                <div className="mb-12 text-left">
                     <motion.h2
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="text-4xl md:text-5xl font-heading font-bold mb-4"
+                        className="text-3xl md:text-4xl font-heading font-extrabold mb-3"
                     >
                         Technical Arsenal
                     </motion.h2>
@@ -113,64 +102,58 @@ export const Skills: React.FC = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-xl opacity-70"
+                        className="text-base text-dark/70"
                     >
-                        Tools and technologies I use to bring ideas to life.
+                        Tools and technologies I use to build scalable software and integrated AI solutions.
                     </motion.p>
                 </div>
 
-                {/* Marquee Section */}
-                <div className="relative w-full max-w-5xl mx-auto mb-16 overflow-hidden mask-gradient-x">
-                    <motion.div
-                        className="flex gap-8 whitespace-nowrap"
-                        variants={marqueeVariants}
-                        animate="animate"
-                        whileHover={{ animationPlayState: "paused" }} // Note: Framer Motion uses a different pause mechanism, but 'whileHover' usually affects variants. For infinite loop, CSS pause is easier, or specific Framer handling. 
-                    // Simplified approach for cleaner code: Let's use a duplicate list and standard consistent motion.
-                    // Actually, 'whileHover' on parent to stop animation isn't native to the 'animate' prop flow easily without motionValue manipulation.
-                    // Let's use standard framer motion loop and accept it might not pause perfectly on hover without complex setup, OR use CSS for the marquee part for better control.
-                    // I will stick to a simpler continuous flow for now as requested "pause on hover" is best done css-style or with motion values.
-                    // Refined plan: Use a simple flex container moving.
-                    >
-                        {/* Triple duplication for seamless loop */}
-                        {[...allSkills, ...allSkills, ...allSkills].map((skill, idx) => (
-                            <div key={idx} className="flex items-center gap-2 text-dark/70 font-bold text-lg select-none">
-                                <span className={`w-2 h-2 rounded-full bg-${skill.color}-500 inline-block`} />
-                                {skill.name}
-                            </div>
-                        ))}
-                    </motion.div>
-
-                    {/* Gradient Masks for fade effect on edges */}
-                    <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-surface to-transparent z-10" />
-                    <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-surface to-transparent z-10" />
-                </div>
-
-                {/* Staggered Grid */}
+                {/* Refined Balanced Grid */}
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-center"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.1 }}
                 >
-                    {skillCategories.map((category, idx) => (
-                        <motion.div key={idx} variants={itemVariants}>
-                            <Card
-                                className="bg-white h-full transition-all duration-300 hover:shadow-[8px_8px_0px_#000] hover:-translate-y-2 hover:bg-green-50/50"
-                                title={category.title}
+                    {skillCategories.map((category, idx) => {
+                        const isLast = idx === skillCategories.length - 1;
+                        return (
+                            <motion.div 
+                                key={idx} 
+                                variants={itemVariants} 
+                                className={`h-full ${isLast ? 'md:col-span-2' : ''}`}
                             >
-                                <div className="mb-4 p-3 bg-bg border-2 border-dark rounded-lg inline-block shadow-neo-sm">
-                                    {category.icon}
-                                </div>
-                                <div className="flex flex-wrap gap-2">
-                                    {category.skills.map((skill: any) => (
-                                        <Badge key={skill.name} color={skill.color}>{skill.name}</Badge>
-                                    ))}
-                                </div>
-                            </Card>
-                        </motion.div>
-                    ))}
+                                <Card className="h-full bg-white/40 border border-zinc-200/50 hover:border-primary/20 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 p-6 flex flex-col justify-between">
+                                    <div>
+                                        {/* Inline Icon + Title Header */}
+                                        <div className="flex items-center gap-3 mb-5 border-b border-zinc-100/60 pb-3.5">
+                                            <div className="p-2.5 bg-primary/5 text-primary border border-primary/10 rounded-xl shrink-0">
+                                                {React.cloneElement(category.icon, { className: "w-5 h-5 text-primary" })}
+                                            </div>
+                                            <h3 className="text-lg font-heading font-extrabold text-dark tracking-tight leading-none">
+                                                {category.title}
+                                            </h3>
+                                        </div>
+                                        
+                                        {/* Skills Badges Wrapper */}
+                                        <div className="flex flex-wrap gap-2">
+                                            {category.skills.map((skill: any) => (
+                                                <Badge 
+                                                    key={skill.name} 
+                                                    color={skill.color}
+                                                    className="py-1 px-3 border border-zinc-200/40 hover:border-primary/20 hover:scale-[1.03] shadow-sm hover:shadow-md transition-all duration-200"
+                                                >
+                                                    {skill.symbol}
+                                                    <span className="font-semibold text-xs tracking-wide">{skill.name}</span>
+                                                </Badge>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </Card>
+                            </motion.div>
+                        );
+                    })}
                 </motion.div>
             </div>
         </section>
