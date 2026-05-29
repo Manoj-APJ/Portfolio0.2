@@ -18,37 +18,61 @@ export const Contact: React.FC = () => {
     return (
         <section id="contact" className="py-8">
             <div className="container mx-auto px-6 max-w-3xl">
-                <div className="mb-12 text-left">
-                    <h2 className="text-3xl md:text-4xl font-heading font-extrabold mb-3">Get In Touch</h2>
-                    <p className="text-base text-dark/70">Have a project in mind or just want to say hi?</p>
+                {/* The Closer Title */}
+                <div className="mb-10 text-left">
+                    <h2 className="text-3xl md:text-4xl font-heading font-black mb-3 tracking-tight">
+                        Let's Discuss.
+                    </h2>
+                    <p className="text-sm md:text-base text-dark/65 leading-relaxed font-medium">
+                        Let's build something exceptional together. Drop a message below or copy my direct email.
+                    </p>
                 </div>
 
-                <Card className="p-6 md:p-8">
-                    {/* Copy Email */}
-                    <div className="flex items-center justify-center gap-3 mb-6 text-sm">
-                        <span className="font-bold text-dark/80">{email}</span>
-                        <button
-                            onClick={copyEmail}
-                            type="button"
-                            className="flex items-center gap-1.5 px-3 py-1 border border-zinc-200 rounded-full hover:bg-zinc-50 transition text-xs font-semibold text-dark/70"
-                        >
-                            <Copy className="w-3.5 h-3.5" />
-                            {copied ? 'Copied!' : 'Copy'}
-                        </button>
+                <Card className="p-6 md:p-8 bg-white/40 border border-zinc-200/50 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+                    {/* Premium Status-Style Email Banner */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-6 p-4 bg-primary/5 border border-primary/10 rounded-2xl select-none">
+                        <div className="flex items-center gap-2.5">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            </span>
+                            <span className="text-[10px] font-heading font-extrabold uppercase tracking-wider text-primary">
+                                Direct Connection
+                            </span>
+                        </div>
+                        <div className="flex items-center gap-2.5">
+                            <span className="font-mono text-xs font-bold text-dark/85">
+                                {email}
+                            </span>
+                            <button
+                                onClick={copyEmail}
+                                type="button"
+                                className="flex items-center gap-1.5 px-3 py-1 bg-white hover:bg-zinc-50 border border-zinc-200/80 rounded-full transition-all text-[10px] font-extrabold uppercase tracking-wider text-dark/75 shadow-sm active:scale-95 cursor-pointer"
+                            >
+                                <Copy className="w-3 h-3 text-primary" />
+                                {copied ? 'Copied!' : 'Copy'}
+                            </button>
+                        </div>
                     </div>
 
                     {submitted ? (
-                        <div className="min-h-[220px] flex flex-col items-center justify-center text-center animate-fade-in-up">
+                        <div className="min-h-[220px] flex flex-col items-center justify-center text-center animate-fade-in">
                             <div className="w-12 h-12 bg-emerald-500/10 text-emerald-600 rounded-full flex items-center justify-center mb-4 border border-emerald-500/10">
                                 <CheckCircle className="w-6 h-6" />
                             </div>
-                            <h3 className="text-xl font-bold mb-2">
+                            <h3 className="text-lg font-bold mb-2">
                                 Message Sent!
                             </h3>
-                            <p className="text-sm text-dark/60 mb-4">
-                                Thanks for reaching out. You can send another message.
+                            <p className="text-xs text-dark/60 mb-5">
+                                Thanks for reaching out. I'll get back to you shortly.
                             </p>
-                            <Button type="button" onClick={() => setSubmitted(false)}>
+                            <Button 
+                                type="button" 
+                                variant="outline"
+                                size="sm"
+                                onClick={() => setSubmitted(false)}
+                                className="text-[10px] uppercase tracking-wider font-extrabold border-dark/20 text-dark hover:bg-dark hover:text-white"
+                            >
                                 Send Another
                             </Button>
                         </div>
@@ -86,8 +110,8 @@ export const Contact: React.FC = () => {
                                 } catch (error) {
                                     console.error("Form submission error", error);
                                 }
-                            }}
-                            className="space-y-5 text-left"
+                             }}
+                             className="space-y-5 text-left"
                         >
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div className="space-y-1">
@@ -132,8 +156,13 @@ export const Contact: React.FC = () => {
                             </div>
 
                             <div className="flex justify-end pt-2">
-                                <Button type="submit" size="md" className="w-full md:w-auto px-6 py-2.5 text-sm">
-                                    Send Message <Send className="w-4 h-4 ml-1" />
+                                <Button 
+                                    type="submit" 
+                                    variant="primary"
+                                    size="md" 
+                                    className="w-full md:w-auto px-8 py-3 text-[10px] font-heading font-extrabold tracking-widest uppercase bg-dark hover:bg-primary rounded-full transition-all duration-200"
+                                >
+                                    Send Message <Send className="w-3.5 h-3.5 ml-1" />
                                 </Button>
                             </div>
                         </form>

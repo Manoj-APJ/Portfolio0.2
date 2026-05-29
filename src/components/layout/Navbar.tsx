@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Download, Github, Linkedin } from 'lucide-react';
-import { Button } from '../ui/Button';
+import { Menu, X } from 'lucide-react';
 import { Logo } from '../layout/logo';
 
 export const Navbar: React.FC = () => {
@@ -8,11 +7,11 @@ export const Navbar: React.FC = () => {
     const [activeSection, setActiveSection] = useState('projects');
 
     const navLinks = [
-        { name: 'Projects', href: '#projects' },
-        { name: 'Skills', href: '#skills' },
-        { name: 'Courses', href: '#courses' },
-        { name: 'Blogs', href: '#blogs' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'projects', href: '#projects' },
+        { name: 'skills', href: '#skills' },
+        { name: 'courses', href: '#courses' },
+        { name: 'blogs', href: '#blogs' },
+        { name: 'contact', href: '#contact' },
     ];
 
     React.useEffect(() => {
@@ -47,10 +46,13 @@ export const Navbar: React.FC = () => {
     }, []);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/50 backdrop-blur-md border-b border-white/30 py-4 transition-all duration-300">
-            <div className="container mx-auto px-6 flex justify-between items-center max-w-7xl">
+        <div className="fixed top-4 left-0 right-0 z-50 px-4 md:px-8 flex flex-col items-center pointer-events-none">
+            {/* Floating Navigation Capsule */}
+            <nav className="w-full max-w-7xl pointer-events-auto bg-gradient-to-r from-blue-50/85 via-white/80 to-amber-50/85 backdrop-blur-md border border-white/50 rounded-full px-6 py-2.5 flex justify-between items-center shadow-neo-lg transition-all duration-300">
                 {/* Logo */}
-                <Logo />
+                <div className="flex items-center">
+                    <Logo />
+                </div>
 
                 {/* Desktop Nav Links */}
                 <div className="hidden md:flex items-center gap-8">
@@ -60,10 +62,10 @@ export const Navbar: React.FC = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className={`font-semibold text-sm tracking-wide transition-all duration-200 ${
+                                className={`font-heading font-bold text-xs tracking-wide transition-all duration-200 ${
                                     isActive
-                                        ? 'text-primary font-bold border-b-2 border-primary pb-1'
-                                        : 'text-dark/60 hover:text-primary pb-1'
+                                        ? 'text-primary border-b-2 border-primary/45 pb-0.5'
+                                        : 'text-dark/60 hover:text-primary pb-0.5'
                                 }`}
                             >
                                 {link.name}
@@ -72,108 +74,75 @@ export const Navbar: React.FC = () => {
                     })}
                 </div>
 
-                {/* Desktop Action & Socials */}
-                <div className="hidden md:flex items-center gap-5">
-                    {/* X (Twitter) */}
-                    <a
-                        href="https://x.com/example"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-dark/70 hover:text-primary transition-colors duration-200"
-                        aria-label="X Profile"
-                    >
-                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-
-                    {/* LinkedIn */}
-                    <a
-                        href="https://linkedin.com/in/example"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-dark/70 hover:text-primary transition-colors duration-200"
-                        aria-label="LinkedIn Profile"
-                    >
-                        <Linkedin className="w-5 h-5" />
-                    </a>
-
-                    {/* GitHub */}
-                    <a
-                        href="https://github.com/example"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-dark/70 hover:text-primary transition-colors duration-200"
-                        aria-label="GitHub Profile"
-                    >
-                        <Github className="w-5 h-5" />
-                    </a>
-
-                    {/* LeetCode */}
-                    <a
-                        href="https://leetcode.com/example"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-dark/70 hover:text-primary transition-colors duration-200"
-                        aria-label="LeetCode Profile"
-                    >
-                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                            <path d="M16.102 17.93l-2.69 2.6c-.768.74-1.785 1.15-2.866 1.15-1.08 0-2.1-.41-2.866-1.15l-5.69-5.5a4.024 4.024 0 0 1 0-5.72l5.69-5.5c.768-.74 1.785-1.15 2.866-1.15 1.08 0 2.1.41 2.866 1.15l2.69 2.6a1 1 0 0 1-1.398 1.43l-2.69-2.6a1.99 1.99 0 0 0-1.468-.58 1.99 1.99 0 0 0-1.468.58l-5.69 5.5a2.023 2.023 0 0 0 0 2.86l5.69 5.5c.39.38.91.58 1.468.58.558 0 1.078-.2 1.468-.58l2.69-2.6a1 1 0 0 1 1.398 1.43zM22 11h-9a1 1 0 0 0 0 2h9a1 1 0 0 0 0-2z"/>
-                        </svg>
-                    </a>
-
-                    <Button
-                        variant="outline"
-                        size="sm"
+                {/* Desktop Action Pills (Right side) */}
+                <div className="hidden md:flex items-center gap-3">
+                    <button
                         onClick={() => window.open('/resume.pdf', '_blank')}
-                        className="border-primary/30 text-primary px-4 py-1.5 text-xs font-semibold"
+                        className="bg-dark text-white hover:bg-primary rounded-full px-5 py-2 transition-all duration-200 text-xs font-heading font-bold tracking-wide shadow-sm cursor-pointer"
                     >
-                        <Download className="w-3.5 h-3.5" />
-                        Resume
-                    </Button>
+                        resume
+                    </button>
+                    <button
+                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="border border-dark/25 text-dark hover:bg-dark hover:text-white rounded-full px-5 py-2 transition-all duration-200 text-xs font-heading font-bold tracking-wide cursor-pointer"
+                    >
+                        contact
+                    </button>
                 </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden p-2 rounded-full hover:bg-zinc-100 transition-colors"
+                    className="md:hidden p-2 rounded-full hover:bg-zinc-100/50 transition-colors"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    {isOpen ? <X className="w-6 h-6 text-dark" /> : <Menu className="w-6 h-6 text-dark" />}
+                    {isOpen ? <X className="w-5 h-5 text-dark" /> : <Menu className="w-5 h-5 text-dark" />}
                 </button>
-            </div>
+            </nav>
 
             {/* Mobile Nav Dropdown */}
             {isOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-zinc-200 p-6 flex flex-col gap-5 shadow-xl animate-fade-in-down">
+                <div className="md:hidden w-full max-w-sm mt-2 bg-white/95 backdrop-blur-md border border-zinc-200/60 p-5 rounded-2xl flex flex-col gap-4 shadow-xl pointer-events-auto animate-fade-in">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            className="font-semibold text-lg text-dark/80 py-2 border-b border-zinc-100"
+                            className="font-semibold text-sm text-dark/80 py-1.5 border-b border-zinc-100 block"
                             onClick={() => setIsOpen(false)}
                         >
                             {link.name}
                         </a>
                     ))}
-                    <div className="flex gap-6 py-2 justify-center">
-                        <a href="https://x.com/example" target="_blank" rel="noopener noreferrer" className="text-dark/70"><svg viewBox="0 0 24 24" className="w-6 h-6 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                        <a href="https://linkedin.com/in/example" target="_blank" rel="noopener noreferrer" className="text-dark/70"><Linkedin className="w-6 h-6" /></a>
-                        <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" className="text-dark/70"><Github className="w-6 h-6" /></a>
-                        <a href="https://leetcode.com/example" target="_blank" rel="noopener noreferrer" className="text-dark/70"><svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M16.102 17.93l-2.69 2.6c-.768.74-1.785 1.15-2.866 1.15-1.08 0-2.1-.41-2.866-1.15l-5.69-5.5a4.024 4.024 0 0 1 0-5.72l5.69-5.5c.768-.74 1.785-1.15 2.866-1.15 1.08 0 2.1.41 2.866 1.15l2.69 2.6a1 1 0 0 1-1.398 1.43l-2.69-2.6a1.99 1.99 0 0 0-1.468-.58 1.99 1.99 0 0 0-1.468.58l-5.69 5.5a2.023 2.023 0 0 0 0 2.86l5.69 5.5c.39.38.91.58 1.468.58.558 0 1.078-.2 1.468-.58l2.69-2.6a1 1 0 0 1 1.398 1.43zM22 11h-9a1 1 0 0 0 0 2h9a1 1 0 0 0 0-2z"/></svg></a>
+                    <div className="flex gap-3 w-full mt-2">
+                        <button
+                            className="flex-1 justify-center py-2.5 text-xs rounded-full bg-dark text-white font-bold tracking-wide"
+                            onClick={() => {
+                                window.open('/resume.pdf', '_blank');
+                                setIsOpen(false);
+                            }}
+                        >
+                            resume
+                        </button>
+                        <button
+                            className="flex-1 justify-center py-2.5 text-xs rounded-full border border-dark/25 text-dark font-bold tracking-wide"
+                            onClick={() => {
+                                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                setIsOpen(false);
+                            }}
+                        >
+                            contact
+                        </button>
                     </div>
-                    <Button
-                        variant="outline"
-                        className="w-full justify-center border-primary/30 text-primary py-3"
-                        onClick={() => {
-                            window.open('/resume.pdf', '_blank');
-                            setIsOpen(false);
-                        }}
-                    >
-                        <Download className="w-4 h-4" />
-                        Download Resume
-                    </Button>
                 </div>
             )}
-        </nav>
+
+            {/* Symmetrical Scroll Flourish below Navbar */}
+            <div className="w-full flex justify-center mt-2.5 opacity-60 hidden md:flex pointer-events-none select-none">
+                <svg viewBox="0 0 120 15" className="w-24 h-4 fill-current text-primary/30">
+                    <path d="M60,7.5 C55,4 51,2 45,2 C35,2 35,11 44,11 C50,11 53,8 55,6 C57,8 60,11 66,11 C75,11 75,2 65,2 C59,2 55,4 60,7.5 Z M44,9 C39,9 38,4 44,4 C48,4 50,6 52,7.5 C50,9 48,9 44,9 Z M66,9 C62,9 60,7.5 58,7.5 C60,6 62,4 66,4 C72,4 71,9 66,9 Z" />
+                    <line x1="0" y1="7.5" x2="32" y2="7.5" stroke="currentColor" strokeWidth="0.75" />
+                    <line x1="88" y1="7.5" x2="120" y2="7.5" stroke="currentColor" strokeWidth="0.75" />
+                </svg>
+            </div>
+        </div>
     );
 };

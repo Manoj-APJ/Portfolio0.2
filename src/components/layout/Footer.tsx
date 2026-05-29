@@ -3,11 +3,11 @@ import { Github, Linkedin, Mail } from 'lucide-react'
 
 export const Footer: React.FC = () => {
     const navLinks = [
-        { name: 'Projects', href: '#projects' },
-        { name: 'Skills', href: '#skills' },
-        { name: 'Courses', href: '#courses' },
-        { name: 'Blogs', href: '#blogs' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'projects', href: '#projects' },
+        { name: 'skills', href: '#skills' },
+        { name: 'courses', href: '#courses' },
+        { name: 'blogs', href: '#blogs' },
+        { name: 'contact', href: '#contact' },
     ]
 
     return (
@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
             <div className="container mx-auto px-6 max-w-7xl relative z-10">
                 {/* Top Navigation */}
                 <div className="flex justify-center mb-10">
-                    <nav className="flex flex-wrap justify-center gap-8 md:gap-12 text-xs md:text-sm font-semibold tracking-wider uppercase text-zinc-400">
+                    <nav className="flex flex-wrap justify-center gap-8 md:gap-12 text-xs md:text-sm font-semibold tracking-wider text-zinc-400">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
