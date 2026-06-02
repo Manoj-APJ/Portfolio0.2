@@ -46,12 +46,7 @@ export const Courses: React.FC = () => {
                             transition={{ duration: 0.5, delay: idx * 0.15 }}
                         >
                             <Card className="h-full bg-white/40 border border-zinc-200/50 hover:border-primary/20 hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 flex flex-col p-6 relative group">
-                                {/* Accent line at top */}
-                                <div className={`absolute top-0 left-0 right-0 h-1.5 rounded-t-2xl ${
-                                    course.color === 'orange' ? 'bg-amber-500' : 'bg-primary'
-                                }`} />
-
-                                <div className="flex justify-between items-start gap-4 mb-4 mt-2">
+                                <div className="flex justify-between items-start gap-4 mb-4">
                                     <div className="flex items-center gap-3">
                                         <div className={`p-2.5 rounded-xl border ${
                                             course.color === 'orange' 

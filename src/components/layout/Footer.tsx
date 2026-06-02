@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
                     <div className="flex items-center justify-center md:justify-end gap-5">
                         {/* X */}
                         <a
-                            href="https://x.com/example"
+                            href="https://x.com/manojm012"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-zinc-400 hover:text-secondary transition-colors duration-200"
@@ -109,7 +109,7 @@ export const Footer: React.FC = () => {
 
                         {/* Email */}
                         <a
-                            href="mailto:example@example.com"
+                            href="mailto:manojmannamapj9@gmail.com"
                             className="text-zinc-400 hover:text-secondary transition-colors duration-200"
                             aria-label="Email"
                         >

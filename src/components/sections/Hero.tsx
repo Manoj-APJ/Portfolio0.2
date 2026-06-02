@@ -13,9 +13,9 @@ export const Hero: React.FC = () => {
                 {/* Avatar with subtle glow */}
                 <div className="relative group shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-tr from-secondary/30 to-primary/20 rounded-full blur-xl opacity-60 group-hover:opacity-85 transition-all duration-300 -z-10" />
-                    <img 
-                        src="/avatar.png" 
-                        alt="Manoj Mannam" 
+                    <img
+                        src="/avatar.png"
+                        alt="Manoj Mannam"
                         className="w-16 h-16 rounded-full border-2 border-white shadow-md object-cover hover:rotate-3 transition-transform duration-300"
                     />
                 </div>
@@ -47,47 +47,47 @@ export const Hero: React.FC = () => {
                 </span>
                 <div className="flex items-center gap-2">
                     {/* GitHub */}
-                    <a 
-                        href="https://github.com/example" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                    <a
+                        href="https://github.com/manoj-apj"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-2 bg-zinc-50/50 hover:bg-primary hover:text-white border border-zinc-200/50 hover:border-primary rounded-full transition-all duration-200 hover:scale-110 shadow-sm text-dark/70"
                         title="GitHub"
                     >
                         <Github className="w-3.5 h-3.5" />
                     </a>
                     {/* LinkedIn */}
-                    <a 
-                        href="https://linkedin.com/in/example" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                    <a
+                        href="https://linkedin.com/in/manoj-mannam"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-2 bg-zinc-50/50 hover:bg-primary hover:text-white border border-zinc-200/50 hover:border-primary rounded-full transition-all duration-200 hover:scale-110 shadow-sm text-dark/70"
                         title="LinkedIn"
                     >
                         <Linkedin className="w-3.5 h-3.5" />
                     </a>
                     {/* X */}
-                    <a 
-                        href="https://x.com/example" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                    <a
+                        href="https://x.com/manojm012"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-2 bg-zinc-50/50 hover:bg-primary hover:text-white border border-zinc-200/50 hover:border-primary rounded-full transition-all duration-200 hover:scale-110 shadow-sm text-dark/70"
                         title="Twitter"
                     >
                         <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                         </svg>
                     </a>
                     {/* LeetCode */}
-                    <a 
-                        href="https://leetcode.com/example" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                    <a
+                        href="https://leetcode.com/u/manojmannamapj9/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-2 bg-zinc-50/50 hover:bg-primary hover:text-white border border-zinc-200/50 hover:border-primary rounded-full transition-all duration-200 hover:scale-110 shadow-sm text-dark/70"
                         title="LeetCode"
                     >
                         <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
-                            <path d="M16.102 17.93l-2.69 2.6c-.768.74-1.785 1.15-2.866 1.15-1.08 0-2.1-.41-2.866-1.15l-5.69-5.5a4.024 4.024 0 0 1 0-5.72l5.69-5.5c.768-.74 1.785-1.15 2.866-1.15 1.08 0 2.1.41 2.866 1.15l2.69 2.6a1 1 0 0 1-1.398 1.43l-2.69-2.6a1.99 1.99 0 0 0-1.468-.58 1.99 1.99 0 0 0-1.468.58l-5.69 5.5a2.023 2.023 0 0 0 0 2.86l5.69 5.5c.39.38.91.58 1.468.58.558 0 1.078-.2 1.468-.58l2.69-2.6a1 1 0 0 1 1.398 1.43zM22 11h-9a1 1 0 0 0 0 2h9a1 1 0 0 0 0-2z"/>
+                            <path d="M16.102 17.93l-2.69 2.6c-.768.74-1.785 1.15-2.866 1.15-1.08 0-2.1-.41-2.866-1.15l-5.69-5.5a4.024 4.024 0 0 1 0-5.72l5.69-5.5c.768-.74 1.785-1.15 2.866-1.15 1.08 0 2.1.41 2.866 1.15l2.69 2.6a1 1 0 0 1-1.398 1.43l-2.69-2.6a1.99 1.99 0 0 0-1.468-.58 1.99 1.99 0 0 0-1.468.58l-5.69 5.5a2.023 2.023 0 0 0 0 2.86l5.69 5.5c.39.38.91.58 1.468.58.558 0 1.078-.2 1.468-.58l2.69-2.6a1 1 0 0 1 1.398 1.43zM22 11h-9a1 1 0 0 0 0 2h9a1 1 0 0 0 0-2z" />
                         </svg>
                     </a>
                 </div>

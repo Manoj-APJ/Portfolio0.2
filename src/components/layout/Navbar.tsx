@@ -135,14 +135,6 @@ export const Navbar: React.FC = () => {
                 </div>
             )}
 
-            {/* Symmetrical Scroll Flourish below Navbar */}
-            <div className="w-full flex justify-center mt-2.5 opacity-60 hidden md:flex pointer-events-none select-none">
-                <svg viewBox="0 0 120 15" className="w-24 h-4 fill-current text-primary/30">
-                    <path d="M60,7.5 C55,4 51,2 45,2 C35,2 35,11 44,11 C50,11 53,8 55,6 C57,8 60,11 66,11 C75,11 75,2 65,2 C59,2 55,4 60,7.5 Z M44,9 C39,9 38,4 44,4 C48,4 50,6 52,7.5 C50,9 48,9 44,9 Z M66,9 C62,9 60,7.5 58,7.5 C60,6 62,4 66,4 C72,4 71,9 66,9 Z" />
-                    <line x1="0" y1="7.5" x2="32" y2="7.5" stroke="currentColor" strokeWidth="0.75" />
-                    <line x1="88" y1="7.5" x2="120" y2="7.5" stroke="currentColor" strokeWidth="0.75" />
-                </svg>
-            </div>
         </div>
     );
 };
